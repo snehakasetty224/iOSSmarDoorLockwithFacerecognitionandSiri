@@ -126,7 +126,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
             
                 let req = NSMutableURLRequest(url: NSURL(string:"http://50.112.13.135:5000/recognize")! as URL)
             
-            print("entering into the recognition ")
+                print("entering into the recognition ")
             
                 let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: { data,response,error in
                     if error != nil{
@@ -158,7 +158,9 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
      * Fetch the photo to display
      **/
     func fetchPhoto() {
+        
         let string_url = "http://10.15.51.1:5000/images/image0.jpg";
+        print("Fetching image from " , string_url)
         /* let url = URL(string:string_url)
          let data = try? Data(contentsOf: url!)
          visitorimage.image = UIImage(data: data!)
@@ -171,6 +173,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
             }
             DispatchQueue.main.async(execute: { () -> Void in
                 let image1 = UIImage(data: data!)
+                print("Fetching data" , data as Any)
                 self.visitorimage.image = image1
             })
             
