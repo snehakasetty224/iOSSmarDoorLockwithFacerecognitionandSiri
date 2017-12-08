@@ -90,6 +90,7 @@
 		20B567511FA8F2D600051AFF /* RasberyPiLockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RasberyPiLockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B567551FA8F2D600051AFF /* RasberyPiLockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasberyPiLockUITests.swift; sourceTree = "<group>"; };
 		20B567571FA8F2D600051AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		276F9D5F1FDA8AC0001DB3CA /* Intent Handler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Intent Handler.entitlements"; sourceTree = "<group>"; };
 		90AA02181FC522F600474B5C /* RasberyPiLock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RasberyPiLock.entitlements; sourceTree = "<group>"; };
 		90AA021D1FC5243800474B5C /* Intent Handler.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Intent Handler.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AA021F1FC5243800474B5C /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
@@ -213,6 +214,7 @@
 		90AA021E1FC5243800474B5C /* Intent Handler */ = {
 			isa = PBXGroup;
 			children = (
+				276F9D5F1FDA8AC0001DB3CA /* Intent Handler.entitlements */,
 				90AA021F1FC5243800474B5C /* IntentHandler.swift */,
 				90AA02211FC5243800474B5C /* Info.plist */,
 				90DF4F401FC5491900BDBB0E /* LockDoorIntent.swift */,
@@ -345,7 +347,16 @@
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.Siri = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -363,6 +374,14 @@
 					90AA021C1FC5243800474B5C = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					90AA02251FC5243800474B5C = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -654,9 +673,9 @@
 				INFOPLIST_FILE = RasberyPiLock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sneha.RasberyPiLock;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CMPE235.iCloudStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -672,9 +691,9 @@
 				INFOPLIST_FILE = RasberyPiLock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sneha.RasberyPiLock;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CMPE235.iCloudStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -685,7 +704,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4LAC7B63N5;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
 				INFOPLIST_FILE = RasberyPiLockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sneha.RasberyPiLockTests;
@@ -702,7 +721,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4LAC7B63N5;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
 				INFOPLIST_FILE = RasberyPiLockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sneha.RasberyPiLockTests;
@@ -718,7 +737,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4LAC7B63N5;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
 				INFOPLIST_FILE = RasberyPiLockUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sneha.RasberyPiLockUITests;
@@ -734,7 +753,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4LAC7B63N5;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
 				INFOPLIST_FILE = RasberyPiLockUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sneha.RasberyPiLockUITests;
@@ -752,7 +771,7 @@
 				DEVELOPMENT_TEAM = 5PKYKCYDR5;
 				INFOPLIST_FILE = "Intent HandlerUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "sneha.RasberyPiLock.Intent-HandlerUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CMPE235.iCloudStore.Intent-HandlerUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -767,7 +786,7 @@
 				DEVELOPMENT_TEAM = 5PKYKCYDR5;
 				INFOPLIST_FILE = "Intent HandlerUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "sneha.RasberyPiLock.Intent-HandlerUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CMPE235.iCloudStore.Intent-HandlerUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -778,11 +797,12 @@
 		90AA023B1FC5243800474B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Intent Handler/Intent Handler.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5PKYKCYDR5;
 				INFOPLIST_FILE = "Intent Handler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "sneha.RasberyPiLock.Intent-Handler";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CMPE235.iCloudStore.Intent-Handler";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -793,11 +813,12 @@
 		90AA023C1FC5243800474B5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Intent Handler/Intent Handler.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5PKYKCYDR5;
 				INFOPLIST_FILE = "Intent Handler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "sneha.RasberyPiLock.Intent-Handler";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CMPE235.iCloudStore.Intent-Handler";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
