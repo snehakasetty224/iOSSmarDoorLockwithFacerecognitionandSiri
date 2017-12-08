@@ -13,6 +13,12 @@ import UIKit
 import Speech
 
 class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
+    @IBAction func whosIsAtTheDoorButton(_ sender: Any) {
+        
+        self.whoIsAtTheDoor()
+    
+        
+    }
     
     @IBOutlet weak var visitorimage: UIImageView!
     @IBOutlet weak var visitorname: UILabel!
@@ -65,9 +71,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
         let myVocabSet = NSOrderedSet(array: myVocab) //Convert myVocab to an NSOrderedSet
         INVocabulary.shared().setVocabularyStrings(myVocabSet, of: .workoutActivityName)
         
-        self.whoIsAtTheDoor()
-        self.fetchPhoto()
-        
+      
         
     }
     
@@ -110,20 +114,28 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
     *   3. provides result
     */
     func whoIsAtTheDoor() {
-        let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.12:5000/clickPhoto")! as URL)
+        let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.103:5000/clickPhoto")! as URL)
         let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: { data,response,error in
             if error != nil{
                 print(error!.localizedDescription)
                 return
             }
-            if let responseJSON = (try? JSONSerialization.jsonObject(with: data!, options: [])) as? [String:AnyObject]{
-                
+          //  if let responseJSON = (try? JSONSerialization.jsonObject(with: data!, options: [])) as? [String:AnyObject]{
+            
+                self.fetchPhoto()
+            
                 let req = NSMutableURLRequest(url: NSURL(string:"http://50.112.13.135:5000/recognize")! as URL)
+            
+            print("entering into the recognition ")
+            
                 let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: { data,response,error in
                     if error != nil{
                         print(error!.localizedDescription)
                         return
                     }
+                    
+                    print("executing the recognition .py")
+                    
                     if let responseJSON = (try? JSONSerialization.jsonObject(with: data!, options: [])) as? [String:AnyObject]{
                         
                         print(responseJSON)
@@ -137,7 +149,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
                     }
                 })
                 task.resume()
-            }
+            //}
         })
         task.resume()
     }
@@ -146,7 +158,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
      * Fetch the photo to display
      **/
     func fetchPhoto() {
-        let string_url = "http://192.168.0.12:5000/images/images0.jpg";
+        let string_url = "http://192.168.0.103:5000/images/image0.jpg";
         /* let url = URL(string:string_url)
          let data = try? Data(contentsOf: url!)
          visitorimage.image = UIImage(data: data!)
@@ -169,7 +181,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
      * Lock the door
      */
     func lockTheDoor() {
-        let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.12:5000/lock")! as URL)
+        let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.103:5000/lock")! as URL)
         req.httpMethod = "GET"
         req.httpBody = "key=\"value\"".data(using: String.Encoding.utf8)
         URLSession.shared.dataTask(with: req as URLRequest) { data, response, error in
@@ -187,7 +199,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
      * UnLock the door
      */
     func unlockTheDoor() {
-        let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.12:5000/unlock")! as URL)
+        let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.103:5000/unlock")! as URL)
         req.httpMethod = "GET"
         req.httpBody = "key=\"value\"".data(using: String.Encoding.utf8)
         URLSession.shared.dataTask(with: req as URLRequest) { data, response, error in
@@ -237,7 +249,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
             var isFinal = false  //8
             //Open & Close the door using RaspberryPiLock
             if(result?.bestTranscription.formattedString == "Open the door using iLock"){
-                let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.12:5000/unlock")! as URL)
+                let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.103:5000/unlock")! as URL)
                 req.httpMethod = "GET"
                 req.httpBody = "key=\"value\"".data(using: String.Encoding.utf8)
                 URLSession.shared.dataTask(with: req as URLRequest) { data, response, error in
@@ -250,7 +262,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
                     }
                     }.resume()
             }else if(result?.bestTranscription.formattedString == "Close the door using RasberyPiLock"){
-                let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.12:5000/lock")! as URL)
+                let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.103:5000/lock")! as URL)
                 req.httpMethod = "GET"
                 req.httpBody = "key=\"value\"".data(using: String.Encoding.utf8)
                 URLSession.shared.dataTask(with: req as URLRequest) { data, response, error in

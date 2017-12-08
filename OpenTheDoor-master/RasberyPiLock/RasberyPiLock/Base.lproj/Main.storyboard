@@ -228,6 +228,9 @@
                                 <rect key="frame" x="81" y="75" width="191" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Who is at the door?"/>
+                                <connections>
+                                    <action selector="whosIsAtTheDoorButton:" destination="Fgg-h2-CR7" eventType="touchUpInside" id="RWd-pi-mcC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f62-tf-KWR">
                                 <rect key="frame" x="306" y="75" width="179" height="40"/>
