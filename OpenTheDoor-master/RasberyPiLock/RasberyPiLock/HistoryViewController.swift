@@ -28,7 +28,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         //cell.historyuser.text = userlist[indexPath.row]
         //cell.historyimage.image = UIImage(named: userlist[indexPath.row])
         
-        let string_url = "http://192.168.0.12:5000/history/" + nameArray[indexPath.row] + ".jpg";
+        let string_url = "http://50.112.13.135:5000/history/" + nameArray[indexPath.row] + ".jpg";
         print(string_url)
         let url = URL(string:string_url)
         let data = try? Data(contentsOf: url!)
@@ -64,7 +64,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func fetchHistory() {
         //the json file url
-        let URL_LIST = "http://192.168.0.12:5000/list";
+        let URL_LIST = "http://50.112.13.135:5000/historylist";
         
         //A string array to save all the names
         let url = NSURL(string: URL_LIST)
@@ -75,7 +75,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
                 
                 //printing the json in console
-                //print(jsonObj!.value(forKey: "name")!)
+                print(jsonObj!.value(forKey: "name")!)
                 
                 //getting the avengers tag array from json and converting it to NSArray
                 if let heroeArray = jsonObj!.value(forKey: "children") as? NSArray {

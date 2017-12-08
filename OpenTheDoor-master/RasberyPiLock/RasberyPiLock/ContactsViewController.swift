@@ -32,7 +32,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
       // cell.contactsimage.image = UIImage(named: visitorlist[indexPath.row])
         
         
-        let string_url = "http://54.186.191.119:5000/images/" + nameArray[indexPath.row] + ".jpg";
+        let string_url = "http://50.112.13.135:5000/images/" + nameArray[indexPath.row] + ".jpg";
         let url = URL(string:string_url)
         let data = try? Data(contentsOf: url!)
         cell.contactsimage.image = UIImage(data: data!)
@@ -56,7 +56,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
             
             //appending the names to label
             //  labelTest.text = labelTest.text! + name + "\n";
-            //print(name)
+            print(name)
         }
     }
     
@@ -67,7 +67,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     
     func appendVisitors() {
         //the json file url
-        let URL_LIST = "http://54.186.191.119:5000/list";
+        let URL_LIST = "http://50.112.13.135:5000/list";
         
         //A string array to save all the names
         let url = NSURL(string: URL_LIST)
