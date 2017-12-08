@@ -44,14 +44,14 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
     }*/
     
     @IBAction func addToContact(_ sender: Any) {
-         performSegue(withIdentifier: "addcontactsegue", sender: self)
+         //performSegue(withIdentifier: "addcontactsegue", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let contactscontroller = segue.destination as! ContactsViewController
         contactscontroller.newcontact = visitorname.text!
     
-    }
+    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +60,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
         INPreferences.requestSiriAuthorization { (status) in
             
         }
-        
+        self.enableSIRI()
         let myVocab = ["push up", "sit up", "pull up", "open the door"]
         let myVocabSet = NSOrderedSet(array: myVocab) //Convert myVocab to an NSOrderedSet
         INVocabulary.shared().setVocabularyStrings(myVocabSet, of: .workoutActivityName)
@@ -68,36 +68,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
         self.whoIsAtTheDoor()
         self.fetchPhoto()
         
-        //SpeechKit
-        microphoneButton.isEnabled = false
         
-        speechRecognizer.delegate = self
-        
-        SFSpeechRecognizer.requestAuthorization { (authStatus) in
-            
-            var isButtonEnabled = false
-            
-            switch authStatus {
-            case .authorized:
-                isButtonEnabled = true
-                
-            case .denied:
-                isButtonEnabled = false
-                print("User denied access to speech recognition")
-                
-            case .restricted:
-                isButtonEnabled = false
-                print("Speech recognition restricted on this device")
-                
-            case .notDetermined:
-                isButtonEnabled = false
-                print("Speech recognition not yet authorized")
-            }
-            
-            OperationQueue.main.addOperation() {
-                self.microphoneButton.isEnabled = isButtonEnabled
-            }
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -248,8 +219,8 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
             
             var isFinal = false  //8
             //Open & Close the door using RaspberryPiLock
-            if(result?.bestTranscription.formattedString == "Open the door using RasberyPiLock"){
-                let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.20:5000/unlock")! as URL)
+            if(result?.bestTranscription.formattedString == "Open the door using iLock"){
+                let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.12:5000/unlock")! as URL)
                 req.httpMethod = "GET"
                 req.httpBody = "key=\"value\"".data(using: String.Encoding.utf8)
                 URLSession.shared.dataTask(with: req as URLRequest) { data, response, error in
@@ -319,6 +290,39 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
             microphoneButton.isEnabled = true
         } else {
             microphoneButton.isEnabled = false
+        }
+    }
+    
+    func enableSIRI() {
+        //SpeechKit
+        microphoneButton.isEnabled = false
+        
+        speechRecognizer.delegate = self
+        
+        SFSpeechRecognizer.requestAuthorization { (authStatus) in
+            
+            var isButtonEnabled = false
+            
+            switch authStatus {
+            case .authorized:
+                isButtonEnabled = true
+                
+            case .denied:
+                isButtonEnabled = false
+                print("User denied access to speech recognition")
+                
+            case .restricted:
+                isButtonEnabled = false
+                print("Speech recognition restricted on this device")
+                
+            case .notDetermined:
+                isButtonEnabled = false
+                print("Speech recognition not yet authorized")
+            }
+            
+            OperationQueue.main.addOperation() {
+                self.microphoneButton.isEnabled = isButtonEnabled
+            }
         }
     }
 }

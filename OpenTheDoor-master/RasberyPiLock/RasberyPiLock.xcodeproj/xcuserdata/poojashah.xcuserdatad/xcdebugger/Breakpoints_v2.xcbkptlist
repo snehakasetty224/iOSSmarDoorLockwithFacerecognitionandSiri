@@ -147,5 +147,179 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RasberyPiLock/HistoryViewController.swift"
+            timestampString = "534426524.774146"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "fetchHistory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RasberyPiLock/HistoryViewController.swift"
+            timestampString = "534426524.774766"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "fetchHistory()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RasberyPiLock.HistoryViewController.fetchHistory() -&gt; ()"
+                  moduleName = "RasberyPiLock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/iOSSmarDoorLockwithFacerecognitionandSiri/OpenTheDoor-master/RasberyPiLock/RasberyPiLock/HistoryViewController.swift"
+                  timestampString = "534426527.093392"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "352">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RasberyPiLock.HistoryViewController.fetchHistory() -&gt; ()"
+                  moduleName = "RasberyPiLock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/iOSSmarDoorLockwithFacerecognitionandSiri/OpenTheDoor-master/RasberyPiLock/RasberyPiLock/HistoryViewController.swift"
+                  timestampString = "534426527.099809"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "953">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RasberyPiLock.HistoryViewController.fetchHistory() -&gt; ()"
+                  moduleName = "RasberyPiLock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/iOSSmarDoorLockwithFacerecognitionandSiri/OpenTheDoor-master/RasberyPiLock/RasberyPiLock/HistoryViewController.swift"
+                  timestampString = "534426527.102042"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RasberyPiLock/HistoryViewController.swift"
+            timestampString = "534426544.064836"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "fetchHistory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RasberyPiLock/ContactsViewController.swift"
+            timestampString = "534426605.563203"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "appendVisitors()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RasberyPiLock.ContactsViewController.appendVisitors() -&gt; ()"
+                  moduleName = "RasberyPiLock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/iOSSmarDoorLockwithFacerecognitionandSiri/OpenTheDoor-master/RasberyPiLock/RasberyPiLock/ContactsViewController.swift"
+                  timestampString = "534426605.889513"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RasberyPiLock.ContactsViewController.appendVisitors() -&gt; ()"
+                  moduleName = "RasberyPiLock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/iOSSmarDoorLockwithFacerecognitionandSiri/OpenTheDoor-master/RasberyPiLock/RasberyPiLock/ContactsViewController.swift"
+                  timestampString = "534426605.891213"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RasberyPiLock.ContactsViewController.appendVisitors() -&gt; ()"
+                  moduleName = "RasberyPiLock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/iOSSmarDoorLockwithFacerecognitionandSiri/OpenTheDoor-master/RasberyPiLock/RasberyPiLock/ContactsViewController.swift"
+                  timestampString = "534426605.892762"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RasberyPiLock/HistoryViewController.swift"
+            timestampString = "534426629.716256"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "fetchHistory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

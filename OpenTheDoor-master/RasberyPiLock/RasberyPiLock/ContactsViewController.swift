@@ -47,6 +47,25 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         super.viewDidLoad()
         //sneha   visitorlist.append(newcontact)
         
+       appendVisitors()
+    }
+    
+    func showNames(){
+        //looing through all the elements of the array
+        for name in nameArray{
+            
+            //appending the names to label
+            //  labelTest.text = labelTest.text! + name + "\n";
+            //print(name)
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func appendVisitors() {
         //the json file url
         let URL_LIST = "http://54.186.191.119:5000/list";
         
@@ -54,7 +73,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         let url = NSURL(string: URL_LIST)
         
         //fetching the data from the url
-        URLSession.shared.dataTask(with: (url as? URL)!, completionHandler: {(data, response, error) -> Void in
+        URLSession.shared.dataTask(with: (url as URL?)!, completionHandler: {(data, response, error) -> Void in
             
             if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
                 
@@ -68,8 +87,8 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
                         //converting the element to a dictionary
                         if let heroeDict = heroe as? NSDictionary {
                             //getting the name from the dictionary
-                            if var name = heroeDict.value(forKey: "name") {
-                                var index = (name as AnyObject).range(of: ".", options: .backwards).lowerBound
+                            if let name = heroeDict.value(forKey: "name") {
+                                let index = (name as AnyObject).range(of: ".", options: .backwards).lowerBound
                                 //adding the name to the array
                                 self.nameArray.append(((name as AnyObject).substring(to: index) as? String)!)
                             }
@@ -87,22 +106,6 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
             }
         }).resume()
     }
-    
-    func showNames(){
-        //looing through all the elements of the array
-        for name in nameArray{
-            
-            //appending the names to label
-            //  labelTest.text = labelTest.text! + name + "\n";
-            print(name)
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     
 }
