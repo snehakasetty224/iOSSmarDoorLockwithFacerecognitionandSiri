@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2092348F1FD9C9A5007C31D7 /* 146f2e6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2092348E1FD9C9A5007C31D7 /* 146f2e6.jpg */; };
 		209234911FD9C9D5007C31D7 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209234901FD9C9D5007C31D7 /* AddContactViewController.swift */; };
 		209234931FD9CCF8007C31D7 /* NSMutableDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209234921FD9CCF8007C31D7 /* NSMutableDataExtension.swift */; };
 		20B567361FA8F2D600051AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B567351FA8F2D600051AFF /* AppDelegate.swift */; };
@@ -77,7 +76,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2092348E1FD9C9A5007C31D7 /* 146f2e6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 146f2e6.jpg; path = ../../../../../Downloads/146f2e6.jpg; sourceTree = "<group>"; };
 		209234901FD9C9D5007C31D7 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		209234921FD9CCF8007C31D7 /* NSMutableDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableDataExtension.swift; sourceTree = "<group>"; };
 		20B567321FA8F2D600051AFF /* RasberyPiLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RasberyPiLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,7 +176,6 @@
 		20B567341FA8F2D600051AFF /* RasberyPiLock */ = {
 			isa = PBXGroup;
 			children = (
-				2092348E1FD9C9A5007C31D7 /* 146f2e6.jpg */,
 				90AA02181FC522F600474B5C /* RasberyPiLock.entitlements */,
 				20B567351FA8F2D600051AFF /* AppDelegate.swift */,
 				20B567391FA8F2D600051AFF /* Main.storyboard */,
@@ -400,7 +397,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2092348F1FD9C9A5007C31D7 /* 146f2e6.jpg in Resources */,
 				20B567401FA8F2D600051AFF /* LaunchScreen.storyboard in Resources */,
 				20B5673D1FA8F2D600051AFF /* Assets.xcassets in Resources */,
 				20B5673B1FA8F2D600051AFF /* Main.storyboard in Resources */,
