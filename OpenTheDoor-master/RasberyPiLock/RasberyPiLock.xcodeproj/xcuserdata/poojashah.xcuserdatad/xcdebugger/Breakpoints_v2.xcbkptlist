@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RasberyPiLock/HistoryViewController.swift"
-            timestampString = "534432739.023896"
+            timestampString = "534451278.82572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RasberyPiLock/HistoryViewController.swift"
-            timestampString = "534432739.024036"
+            timestampString = "534451278.826524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -233,7 +233,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RasberyPiLock/HistoryViewController.swift"
-            timestampString = "534432739.024087"
+            timestampString = "534451278.826954"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -245,11 +245,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RasberyPiLock/ContactsViewController.swift"
-            timestampString = "534432739.024133"
+            timestampString = "534451278.827325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -258,14 +258,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "RasberyPiLock.ContactsViewController.appendVisitors() -&gt; ()"
                   moduleName = "RasberyPiLock"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/poojashah/Downloads/iOSSmarDoorLockwithFacerecognitionandSiri/OpenTheDoor-master/RasberyPiLock/RasberyPiLock/ContactsViewController.swift"
-                  timestampString = "534432739.187112"
+                  timestampString = "534450898.06888"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "76"
@@ -273,14 +273,14 @@
                   offsetFromSymbolStart = "114">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "RasberyPiLock.ContactsViewController.appendVisitors() -&gt; ()"
                   moduleName = "RasberyPiLock"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/poojashah/Downloads/iOSSmarDoorLockwithFacerecognitionandSiri/OpenTheDoor-master/RasberyPiLock/RasberyPiLock/ContactsViewController.swift"
-                  timestampString = "534432739.189626"
+                  timestampString = "534450898.072375"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "76"
@@ -288,14 +288,14 @@
                   offsetFromSymbolStart = "668">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RasberyPiLock.ContactsViewController.appendVisitors() -&gt; ()"
                   moduleName = "RasberyPiLock"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/poojashah/Downloads/iOSSmarDoorLockwithFacerecognitionandSiri/OpenTheDoor-master/RasberyPiLock/RasberyPiLock/ContactsViewController.swift"
-                  timestampString = "534432739.19215"
+                  timestampString = "534450898.078251"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "78"
@@ -308,11 +308,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RasberyPiLock/HistoryViewController.swift"
-            timestampString = "534432739.024175"
+            timestampString = "534451278.827378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
