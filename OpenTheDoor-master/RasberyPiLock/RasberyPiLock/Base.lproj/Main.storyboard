@@ -181,8 +181,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homelock2" translatesAutoresizingMaskIntoConstraints="NO" id="upQ-qN-FMz">
-                                <rect key="frame" x="0.0" y="123" width="375" height="318"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="homelock2" translatesAutoresizingMaskIntoConstraints="NO" id="upQ-qN-FMz">
+                                <rect key="frame" x="0.0" y="123" width="748" height="318"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="unknown" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICg-TP-eOF">
                                 <rect key="frame" x="37" y="470" width="186" height="21"/>
@@ -193,28 +193,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who's at the door?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAR-HN-zES">
-                                <rect key="frame" x="101" y="82" width="172" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="3gP-LZ-rPo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOP-B4-JVw">
                                 <rect key="frame" x="255" y="510" width="104" height="84"/>
                                 <state key="normal" image="unlock"/>
                                 <connections>
                                     <action selector="unlockDoor:" destination="Fgg-h2-CR7" eventType="touchUpInside" id="ZFd-pT-RlM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f62-tf-KWR">
-                                <rect key="frame" x="311" y="75" width="48" height="40"/>
-                                <state key="normal" title="Add to contacts" image="plus"/>
-                                <connections>
-                                    <action selector="addToContact:" destination="Fgg-h2-CR7" eventType="touchUpInside" id="SYH-zL-Mck"/>
-                                    <segue destination="Msw-RQ-EI2" kind="push" identifier="" id="vxW-RC-SfJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrE-ls-qca">
@@ -225,7 +208,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gQP-UR-29I">
-                                <rect key="frame" x="0.0" y="591" width="313" height="27"/>
+                                <rect key="frame" x="0.0" y="591" width="686" height="27"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="4ZC-iS-qUy"/>
@@ -241,20 +224,29 @@
                                     <action selector="lockDoor:" destination="Fgg-h2-CR7" eventType="touchUpInside" id="bNV-4W-JfE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tw6-vw-byY">
+                                <rect key="frame" x="81" y="75" width="191" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Who is at the door?"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f62-tf-KWR">
+                                <rect key="frame" x="306" y="75" width="179" height="40"/>
+                                <state key="normal" title="Add to contacts" image="plus"/>
+                                <connections>
+                                    <action selector="addToContact:" destination="Fgg-h2-CR7" eventType="touchUpInside" id="SYH-zL-Mck"/>
+                                    <segue destination="Msw-RQ-EI2" kind="push" identifier="" id="vxW-RC-SfJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="upQ-qN-FMz" firstAttribute="top" secondItem="f62-tf-KWR" secondAttribute="bottom" constant="8" symbolic="YES" id="0FQ-1V-NmU"/>
                             <constraint firstItem="gQP-UR-29I" firstAttribute="bottom" secondItem="Fp8-tY-OhU" secondAttribute="bottom" id="0Ji-zt-Pha"/>
                             <constraint firstItem="ICg-TP-eOF" firstAttribute="leading" secondItem="dib-gw-qxh" secondAttribute="leadingMargin" constant="21" id="2Ce-bk-6R9"/>
-                            <constraint firstItem="rAR-HN-zES" firstAttribute="centerX" secondItem="upQ-qN-FMz" secondAttribute="centerX" id="3Zo-VH-QRy"/>
-                            <constraint firstItem="f62-tf-KWR" firstAttribute="leading" secondItem="rAR-HN-zES" secondAttribute="trailing" constant="38" id="4H1-qf-Qg6"/>
                             <constraint firstItem="ICg-TP-eOF" firstAttribute="top" secondItem="tOP-B4-JVw" secondAttribute="top" constant="-40" id="6gW-Hs-OmJ"/>
                             <constraint firstItem="BrE-ls-qca" firstAttribute="top" secondItem="ICg-TP-eOF" secondAttribute="bottom" constant="20" id="Cpy-sQ-gxd"/>
                             <constraint firstItem="f62-tf-KWR" firstAttribute="top" secondItem="Fp8-tY-OhU" secondAttribute="top" constant="11" id="CwQ-OD-Y2I"/>
                             <constraint firstItem="BrE-ls-qca" firstAttribute="leading" secondItem="Fp8-tY-OhU" secondAttribute="leading" constant="161" id="H1W-dD-XIc"/>
-                            <constraint firstItem="rAR-HN-zES" firstAttribute="leading" secondItem="Fp8-tY-OhU" secondAttribute="leading" constant="101" id="Hpo-ej-XTd"/>
-                            <constraint firstItem="rAR-HN-zES" firstAttribute="top" secondItem="Fp8-tY-OhU" secondAttribute="top" constant="18" id="K9e-3s-xWp"/>
                             <constraint firstItem="gQP-UR-29I" firstAttribute="top" secondItem="BkD-wu-aU7" secondAttribute="bottom" constant="11" id="K9o-gW-kXB"/>
                             <constraint firstItem="BkD-wu-aU7" firstAttribute="top" secondItem="ICg-TP-eOF" secondAttribute="top" constant="60" id="KLs-uK-fTW"/>
                             <constraint firstItem="BkD-wu-aU7" firstAttribute="top" secondItem="upQ-qN-FMz" secondAttribute="bottom" constant="89" id="N3y-N9-TZi"/>
@@ -264,13 +256,12 @@
                             <constraint firstItem="upQ-qN-FMz" firstAttribute="trailing" secondItem="gQP-UR-29I" secondAttribute="trailing" constant="62" id="Zem-Iz-HMU"/>
                             <constraint firstItem="BkD-wu-aU7" firstAttribute="leading" secondItem="ICg-TP-eOF" secondAttribute="leading" id="bfY-4z-C7L"/>
                             <constraint firstItem="BrE-ls-qca" firstAttribute="trailing" secondItem="ICg-TP-eOF" secondAttribute="trailing" id="gGM-Rv-J1b"/>
-                            <constraint firstItem="upQ-qN-FMz" firstAttribute="top" secondItem="rAR-HN-zES" secondAttribute="bottom" constant="14" id="glu-yd-iRq"/>
                             <constraint firstItem="upQ-qN-FMz" firstAttribute="leading" secondItem="gQP-UR-29I" secondAttribute="leading" id="hrS-mv-WpW"/>
                             <constraint firstItem="tOP-B4-JVw" firstAttribute="trailing" secondItem="dib-gw-qxh" secondAttribute="trailingMargin" id="jIX-gq-H85"/>
                             <constraint firstItem="upQ-qN-FMz" firstAttribute="leading" secondItem="dib-gw-qxh" secondAttribute="leading" id="mOA-Ox-uwS"/>
                             <constraint firstItem="BkD-wu-aU7" firstAttribute="baseline" secondItem="tOP-B4-JVw" secondAttribute="firstBaseline" constant="-1.5" id="n39-TW-9l1"/>
                             <constraint firstItem="tOP-B4-JVw" firstAttribute="leading" secondItem="ICg-TP-eOF" secondAttribute="trailing" constant="32" id="qbw-6l-1DO"/>
-                            <constraint firstItem="Fp8-tY-OhU" firstAttribute="trailing" secondItem="f62-tf-KWR" secondAttribute="trailing" constant="16" id="yqj-nj-2WB"/>
+                            <constraint firstItem="Fp8-tY-OhU" firstAttribute="trailing" secondItem="f62-tf-KWR" secondAttribute="trailing" constant="-110" id="yqj-nj-2WB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fp8-tY-OhU"/>
                     </view>

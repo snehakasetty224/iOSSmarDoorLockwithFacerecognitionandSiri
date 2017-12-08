@@ -28,11 +28,16 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         //cell.historyuser.text = userlist[indexPath.row]
         //cell.historyimage.image = UIImage(named: userlist[indexPath.row])
         
-        let string_url = "http://50.112.13.135:5000/history/" + nameArray[indexPath.row] + ".jpg";
-        print(string_url)
-        let url = URL(string:string_url)
-        let data = try? Data(contentsOf: url!)
-        cell.historyimage.image = UIImage(data: data!)
+        if(indexPath.count > 0) {
+            cell.historyuser.text = nameArray[indexPath.row]
+            let string_url = "http://50.112.13.135:5000/history/" + nameArray[indexPath.row] + ".jpg";
+            print(string_url)
+            let url = URL(string:string_url)
+            let data = try? Data(contentsOf: url!)
+            cell.historyimage.image = UIImage(data: data!)
+        } else {
+            cell.contactsname.text = "No contacts detected"
+        }
         cell.historyimage.layer.cornerRadius = cell.historyview.frame.height/4
         
         return cell
