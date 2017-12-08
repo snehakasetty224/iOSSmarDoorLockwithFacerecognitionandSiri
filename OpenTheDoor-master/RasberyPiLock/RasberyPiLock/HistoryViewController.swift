@@ -12,6 +12,7 @@ import UIKit
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var historytable: UITableView!
     let userlist = ["User1", "User2", "User3", "User4", "User1", "User2", "User3", "User4"]
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userlist.count
     }
@@ -25,6 +26,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
        cell.historyuser.text = userlist[indexPath.row]
        cell.historyimage.image = UIImage(named: userlist[indexPath.row])
        cell.historyimage.layer.cornerRadius = cell.historyview.frame.height/4
+        
+        
        return cell
     }
     override func viewDidLoad() {
@@ -32,6 +35,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         historytable.dataSource = self
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

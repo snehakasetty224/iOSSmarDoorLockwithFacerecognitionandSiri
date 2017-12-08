@@ -45,7 +45,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         contactstable.delegate = self
         contactstable.dataSource = self
         super.viewDidLoad()
-     //sneha   visitorlist.append(newcontact)
+        //sneha   visitorlist.append(newcontact)
         
         //the json file url
         let URL_LIST = "http://54.186.191.119:5000/list";
@@ -65,26 +65,17 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
                 if let heroeArray = jsonObj!.value(forKey: "children") as? NSArray {
                     //looping through all the elements
                     for heroe in heroeArray{
-                        
                         //converting the element to a dictionary
                         if let heroeDict = heroe as? NSDictionary {
-                            
                             //getting the name from the dictionary
                             if var name = heroeDict.value(forKey: "name") {
-                                
                                 var index = (name as AnyObject).range(of: ".", options: .backwards).lowerBound
-                                
-                                
                                 //adding the name to the array
                                 self.nameArray.append(((name as AnyObject).substring(to: index) as? String)!)
-                                
-                                
                             }
-                            
                         }
                     }
                 }
-                
                 OperationQueue.main.addOperation({
                     //calling another function after fetching the json
                     //it will show the names to label
