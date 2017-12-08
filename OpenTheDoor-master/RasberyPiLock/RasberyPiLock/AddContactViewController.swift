@@ -15,7 +15,7 @@ class AddContactViewController: UIViewController, URLSessionDelegate,URLSessionT
     
     @IBAction func saveButton(_ sender: Any) {
         
-        var url = "http://54.186.191.119:5000/upload/";
+        var url = "http://50.112.13.135:5000/upload/";
         url.append(nameTextField.text!);
         url.append(".jpg");
         var r  = URLRequest(url: URL(string : url)!)
@@ -43,7 +43,7 @@ class AddContactViewController: UIViewController, URLSessionDelegate,URLSessionT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchPhoto()
         // Do any additional setup after loading the view.
     }
     
@@ -71,7 +71,28 @@ class AddContactViewController: UIViewController, URLSessionDelegate,URLSessionT
         return body as Data
     }
     
-    
+    /**
+     * Fetch the photo to display
+     **/
+    func fetchPhoto() {
+        let string_url = "http://192.168.0.12:5000/images/images0.jpg";
+        /* let url = URL(string:string_url)
+         let data = try? Data(contentsOf: url!)
+         visitorimage.image = UIImage(data: data!)
+         */
+        URLSession.shared.dataTask(with: NSURL(string: string_url)! as URL, completionHandler: { (data, response, error) -> Void in
+            
+            if error != nil {
+                print(error!)
+                return
+            }
+            DispatchQueue.main.async(execute: { () -> Void in
+                let image1 = UIImage(data: data!)
+                self.imageSave.image = image1
+            })
+            
+        }).resume()
+    }
 
 
 }

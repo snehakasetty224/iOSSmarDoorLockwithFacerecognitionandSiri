@@ -103,6 +103,12 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
     }
     
+    /*
+    * Executes to see who is at the door
+    *   1. Call Raspi and take picstures and copy onto AWS Unknown folder
+    *   2. Call AWS recognize and predicts
+    *   3. provides result
+    */
     func whoIsAtTheDoor() {
         let req = NSMutableURLRequest(url: NSURL(string:"http://192.168.0.12:5000/clickPhoto")! as URL)
         let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: { data,response,error in
@@ -112,21 +118,32 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
             }
             if let responseJSON = (try? JSONSerialization.jsonObject(with: data!, options: [])) as? [String:AnyObject]{
                 
-                print(responseJSON)
-                if let response_token:String = responseJSON["Name"] as? String {
-                    print(response_token)
-                    
-                    DispatchQueue.main.async(execute: { () -> Void in
-                        self.visitorname.text = response_token
-                    })
-                }
+                let req = NSMutableURLRequest(url: NSURL(string:"http://50.112.13.135:5000/recognize")! as URL)
+                let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: { data,response,error in
+                    if error != nil{
+                        print(error!.localizedDescription)
+                        return
+                    }
+                    if let responseJSON = (try? JSONSerialization.jsonObject(with: data!, options: [])) as? [String:AnyObject]{
+                        
+                        print(responseJSON)
+                        if let response_token:String = responseJSON["Name"] as? String {
+                            print(response_token)
+                            
+                            DispatchQueue.main.async(execute: { () -> Void in
+                                self.visitorname.text = response_token
+                            })
+                        }
+                    }
+                })
+                task.resume()
             }
         })
         task.resume()
     }
     
     /**
-     * Fetch the photo
+     * Fetch the photo to display
      **/
     func fetchPhoto() {
         let string_url = "http://192.168.0.12:5000/images/images0.jpg";
