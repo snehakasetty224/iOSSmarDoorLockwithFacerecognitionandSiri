@@ -12,19 +12,23 @@ import Intents
 import UIKit
 import Speech
 
-class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
-    @IBAction func whosIsAtTheDoorButton(_ sender: Any) {
-        
-        self.whoIsAtTheDoor()
+class HomeViewController: UIViewController, SFSpeechRecognizerDelegate, AVSpeechSynthesizerDelegate {
     
-        
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    let speechSynthesizer = AVSpeechSynthesizer()
+    @IBAction func whosIsAtTheDoorButton(_ sender: Any) {
+        self.whoIsAtTheDoor()
     }
     
     @IBOutlet weak var visitorimage: UIImageView!
     @IBOutlet weak var visitorname: UILabel!
    // @IBOutlet weak var addbutton: UIButton!
     //SpeechFramework
+    
     @IBOutlet weak var textView: UITextView!
+    
+    
     @IBOutlet weak var microphoneButton: UIButton!
     
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -114,10 +118,18 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
     *   3. provides result
     */
     func whoIsAtTheDoor() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        
         let req = NSMutableURLRequest(url: NSURL(string:"http://10.15.51.1:5000/clickPhoto")! as URL)
         let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: { data,response,error in
             if error != nil{
                 print(error!.localizedDescription)
+                self.activityIndicator.stopAnimating()
                 return
             }
           //  if let responseJSON = (try? JSONSerialization.jsonObject(with: data!, options: [])) as? [String:AnyObject]{
@@ -141,10 +153,19 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
                         print(responseJSON)
                         if let response_token:String = responseJSON["Name"] as? String {
                             print(response_token)
-                            
+                            let sppeakText = response_token + " is here"
                             DispatchQueue.main.async(execute: { () -> Void in
                                 self.visitorname.text = response_token
+                                self.activityIndicator.stopAnimating()
+                                let speechUtterance = AVSpeechUtterance(string: sppeakText)
+                                speechUtterance.rate = 0.25
+                                speechUtterance.pitchMultiplier = 0.25
+                                speechUtterance.volume = 0.75
+                                self.speechSynthesizer.speak(speechUtterance)
+                                
                             })
+                        } else {
+                            self.activityIndicator.stopAnimating()
                         }
                     }
                 })
@@ -161,11 +182,20 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         let string_url = "http://10.15.51.1:5000/images/image0.jpg";
         print("Fetching image from " , string_url)
+        DispatchQueue.main.async {
+            self.getDataFromUrl(string_url, completion: { (data) in
+                DispatchQueue.main.async {
+                    let image = UIImage(data: data!)
+                    self.visitorimage.image = image
+                    print("img refreshed")
+                }
+            })
+        }
         /* let url = URL(string:string_url)
          let data = try? Data(contentsOf: url!)
          visitorimage.image = UIImage(data: data!)
          */
-        URLSession.shared.dataTask(with: NSURL(string: string_url)! as URL, completionHandler: { (data, response, error) -> Void in
+       /* URLSession.shared.dataTask(with: NSURL(string: string_url)! as URL, completionHandler: { (data, response, error) -> Void in
             
             if error != nil {
                 print(error!)
@@ -175,11 +205,19 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
                 let image1 = UIImage(data: data!)
                 print("Fetching data" , data as Any)
                 self.visitorimage.image = image1
+                
             })
             
-        }).resume()
+        }).resume()*/
     }
     
+    func getDataFromUrl(_ url:String, completion: @escaping ((_ data: Data?) -> Void)) {
+        URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { (data, response, error) in
+            if let newData = data {
+                completion(newData)
+            }
+        }) .resume()
+    }
     /*
      * Lock the door
      */
@@ -264,7 +302,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate {
                         print(String(data: data!, encoding: String.Encoding.utf8) ?? "default error ")
                     }
                     }.resume()
-            }else if(result?.bestTranscription.formattedString == "Close the door using RasberyPiLock"){
+            }else if(result?.bestTranscription.formattedString == "Close the door using iLock"){
                 let req = NSMutableURLRequest(url: NSURL(string:"http://10.15.51.1:5000/lock")! as URL)
                 req.httpMethod = "GET"
                 req.httpBody = "key=\"value\"".data(using: String.Encoding.utf8)

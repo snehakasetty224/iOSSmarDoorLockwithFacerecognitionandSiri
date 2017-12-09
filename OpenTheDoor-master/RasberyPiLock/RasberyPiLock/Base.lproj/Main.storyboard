@@ -121,7 +121,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V00-xM-n4O">
-                                                            <rect key="frame" x="243" y="60" width="124" height="21"/>
+                                                            <rect key="frame" x="182" y="60" width="185" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -134,7 +134,7 @@
                                                         <constraint firstItem="V00-xM-n4O" firstAttribute="centerY" secondItem="WVA-CD-tiM" secondAttribute="centerY" id="HOA-Lj-gpk"/>
                                                         <constraint firstItem="ynv-mY-9O4" firstAttribute="top" secondItem="WVA-CD-tiM" secondAttribute="top" constant="4" id="PAV-oj-KOh"/>
                                                         <constraint firstItem="V00-xM-n4O" firstAttribute="trailing" secondItem="WVA-CD-tiM" secondAttribute="trailingMargin" id="gV5-QW-T6F"/>
-                                                        <constraint firstItem="V00-xM-n4O" firstAttribute="leading" secondItem="ynv-mY-9O4" secondAttribute="trailing" constant="84" id="rRR-Uv-3KL"/>
+                                                        <constraint firstItem="V00-xM-n4O" firstAttribute="leading" secondItem="ynv-mY-9O4" secondAttribute="trailing" constant="23" id="rRR-Uv-3KL"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -264,13 +264,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who is at the Door?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWm-1P-fV5" colorLabel="IBBuiltInLabel-Blue">
-                                <rect key="frame" x="112" y="85" width="151" height="21"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Who's at the door?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ybd-kR-wwM">
+                                <rect key="frame" x="94" y="81" width="196" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -279,14 +278,14 @@
                             <constraint firstItem="tOP-B4-JVw" firstAttribute="leading" secondItem="tw6-vw-byY" secondAttribute="trailing" constant="22" id="413-PT-1GZ"/>
                             <constraint firstItem="tOP-B4-JVw" firstAttribute="top" secondItem="BkD-wu-aU7" secondAttribute="top" id="4ce-0b-WWl"/>
                             <constraint firstItem="tw6-vw-byY" firstAttribute="leading" secondItem="ICg-TP-eOF" secondAttribute="leading" id="4gT-NR-qEv"/>
-                            <constraint firstItem="bWm-1P-fV5" firstAttribute="centerX" secondItem="upQ-qN-FMz" secondAttribute="centerX" id="4tz-uU-Imh"/>
                             <constraint firstItem="Fp8-tY-OhU" firstAttribute="bottom" secondItem="qsR-Rv-NRT" secondAttribute="bottom" constant="31" id="50y-Rl-8qU"/>
+                            <constraint firstItem="f62-tf-KWR" firstAttribute="leading" secondItem="Ybd-kR-wwM" secondAttribute="trailing" constant="30" id="8hQ-nL-SBt"/>
+                            <constraint firstItem="Ybd-kR-wwM" firstAttribute="leading" secondItem="BrE-ls-qca" secondAttribute="trailing" constant="44" id="A6J-Ho-I50"/>
                             <constraint firstItem="f62-tf-KWR" firstAttribute="top" secondItem="Fp8-tY-OhU" secondAttribute="top" constant="13" id="BFH-MD-rqj"/>
                             <constraint firstItem="f62-tf-KWR" firstAttribute="trailing" secondItem="dib-gw-qxh" secondAttribute="trailingMargin" id="E4D-5H-O7k"/>
                             <constraint firstItem="upQ-qN-FMz" firstAttribute="leading" secondItem="dib-gw-qxh" secondAttribute="leading" id="EH1-xa-esH"/>
                             <constraint firstItem="qiF-Fa-wCV" firstAttribute="centerX" secondItem="tw6-vw-byY" secondAttribute="centerX" id="Gv5-0i-pg0"/>
                             <constraint firstItem="Fp8-tY-OhU" firstAttribute="bottom" secondItem="tw6-vw-byY" secondAttribute="bottom" constant="43" id="LCk-Z1-IZ1"/>
-                            <constraint firstItem="bWm-1P-fV5" firstAttribute="centerY" secondItem="BrE-ls-qca" secondAttribute="centerY" id="N6u-yB-3iR"/>
                             <constraint firstItem="tw6-vw-byY" firstAttribute="centerY" secondItem="BkD-wu-aU7" secondAttribute="centerY" id="NGc-MF-feQ"/>
                             <constraint firstItem="Fp8-tY-OhU" firstAttribute="trailing" secondItem="ICg-TP-eOF" secondAttribute="trailing" constant="160" id="Nf9-Cv-jLG"/>
                             <constraint firstItem="qiF-Fa-wCV" firstAttribute="centerY" secondItem="tYF-HX-h4b" secondAttribute="centerY" id="QnP-0t-HaP"/>
@@ -299,8 +298,10 @@
                             <constraint firstItem="tw6-vw-byY" firstAttribute="centerX" secondItem="upQ-qN-FMz" secondAttribute="centerX" id="kdY-Kf-MqT"/>
                             <constraint firstAttribute="trailing" secondItem="upQ-qN-FMz" secondAttribute="trailing" id="kqs-4I-vve"/>
                             <constraint firstItem="qsR-Rv-NRT" firstAttribute="centerY" secondItem="qiF-Fa-wCV" secondAttribute="centerY" id="n1B-OB-NJz"/>
+                            <constraint firstItem="Ybd-kR-wwM" firstAttribute="centerY" secondItem="f62-tf-KWR" secondAttribute="centerY" id="nZ2-EN-4Cp"/>
                             <constraint firstItem="tw6-vw-byY" firstAttribute="leading" secondItem="tYF-HX-h4b" secondAttribute="trailing" constant="8" symbolic="YES" id="oDe-oD-Z3I"/>
                             <constraint firstItem="BrE-ls-qca" firstAttribute="leading" secondItem="dib-gw-qxh" secondAttribute="leadingMargin" id="qdN-hq-yX6"/>
+                            <constraint firstItem="Ybd-kR-wwM" firstAttribute="top" secondItem="Fp8-tY-OhU" secondAttribute="top" constant="17" id="rVl-qT-BDR"/>
                             <constraint firstItem="BkD-wu-aU7" firstAttribute="leading" secondItem="Fp8-tY-OhU" secondAttribute="leading" constant="29" id="sPj-3g-Nm4"/>
                             <constraint firstItem="ICg-TP-eOF" firstAttribute="leading" secondItem="Fp8-tY-OhU" secondAttribute="leading" constant="142" id="snn-jm-1dz"/>
                             <constraint firstItem="tOP-B4-JVw" firstAttribute="trailing" secondItem="f62-tf-KWR" secondAttribute="trailing" id="vFx-8D-egv"/>
@@ -310,6 +311,7 @@
                     <navigationItem key="navigationItem" title="iLock" id="YjV-TY-SQb"/>
                     <connections>
                         <outlet property="microphoneButton" destination="BrE-ls-qca" id="BZ4-p7-8Fs"/>
+                        <outlet property="textView" destination="Ybd-kR-wwM" id="pcD-Dd-FVp"/>
                         <outlet property="visitorimage" destination="upQ-qN-FMz" id="hag-VI-lMF"/>
                         <outlet property="visitorname" destination="ICg-TP-eOF" id="KHs-TB-Wez"/>
                     </connections>

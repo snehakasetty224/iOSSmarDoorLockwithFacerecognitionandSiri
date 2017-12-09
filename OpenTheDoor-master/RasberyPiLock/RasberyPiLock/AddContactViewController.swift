@@ -75,7 +75,7 @@ class AddContactViewController: UIViewController, URLSessionDelegate,URLSessionT
      * Fetch the photo to display
      **/
     func fetchPhoto() {
-        let string_url = "http://10.15.51.1:5000/images/images0.jpg";
+        let string_url = "http://10.15.51.1:5000/images/image0.jpg";
         print("Fetching image from " , string_url)
         /* let url = URL(string:string_url)
          let data = try? Data(contentsOf: url!)

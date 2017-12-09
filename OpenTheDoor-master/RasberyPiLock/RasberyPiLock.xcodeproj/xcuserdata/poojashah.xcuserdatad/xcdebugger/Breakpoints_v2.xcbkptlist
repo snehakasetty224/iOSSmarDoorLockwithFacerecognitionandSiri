@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RasberyPiLock/HistoryViewController.swift"
-            timestampString = "534455491.587121"
+            timestampString = "534474149.223342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RasberyPiLock/HistoryViewController.swift"
-            timestampString = "534455491.587517"
+            timestampString = "534474149.223451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -233,7 +233,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RasberyPiLock/HistoryViewController.swift"
-            timestampString = "534455491.587793"
+            timestampString = "534474149.22353"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
@@ -249,7 +249,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RasberyPiLock/ContactsViewController.swift"
-            timestampString = "534466663.582563"
+            timestampString = "534491088.505914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -312,7 +312,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RasberyPiLock/HistoryViewController.swift"
-            timestampString = "534455491.588109"
+            timestampString = "534474149.223658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -328,12 +328,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RasberyPiLock/HistoryViewController.swift"
-            timestampString = "534455491.588342"
+            timestampString = "534474149.223755"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RasberyPiLock/AddContactViewController.swift"
+            timestampString = "534491088.506208"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "saveButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
